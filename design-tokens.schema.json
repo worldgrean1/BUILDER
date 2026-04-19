@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Design Tokens Schema",
+  "type": "object",
+  "properties": {
+    "designSystem": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" }
+    },
+    "color": {
+      "type": "object",
+      "properties": {
+        "surface": { "type": "object", "additionalProperties": { "type": "string" } },
+        "primary": { "type": "object", "additionalProperties": { "type": "string" } },
+        "secondary": { "type": "object", "additionalProperties": { "type": "string" } },
+        "state": { "type": "object", "additionalProperties": { "type": "string" } },
+        "text": { "type": "object", "additionalProperties": { "type": "string" } },
+        "border": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    }
+  },
+  "required": ["brand", "color", "typography", "spacing"]
+}
